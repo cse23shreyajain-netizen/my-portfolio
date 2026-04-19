@@ -8,24 +8,80 @@ const projects = [
   {
     title: "Social Media Platform",
     short: "Full-stack LinkedIn-like platform.",
-    full:
-      "Developed a full-stack social networking platform inspired by LinkedIn, enabling users to create profiles, share posts, like and comment on content, and connect with other users. The frontend was built using HTML, CSS, JavaScript, and Bootstrap to ensure a responsive and user-friendly interface. On the backend, Laravel (PHP) was used to implement RESTful APIs, authentication systems, and server-side logic. MySQL was used as the database to manage structured user data, posts, and relationships. The project follows MVC architecture, ensuring scalability and maintainability. Key features include secure login/signup, dynamic content rendering, and efficient database queries for handling multiple users.",
+    full: `
+This project is a full-stack social networking platform inspired by LinkedIn, designed to allow users to connect, share, and interact in a professional environment.
+
+🔹 Frontend Development:
+The frontend was developed using HTML, CSS, JavaScript, and Bootstrap to create a clean, responsive, and user-friendly interface. The UI focuses on smooth navigation, structured layouts, and responsive design across different devices.
+
+🔹 Backend Development:
+The backend was built using Laravel (PHP), following MVC architecture for better scalability and maintainability. RESTful APIs were implemented to handle user interactions such as posting content, liking, commenting, and managing connections.
+
+🔹 Database:
+MySQL was used to manage structured data including user profiles, posts, comments, and relationships. Efficient database queries were implemented to handle multiple users and large data operations.
+
+🔹 Features:
+- User authentication (login/signup)
+- Profile management system
+- Create, update, and delete posts
+- Like and comment functionality
+- Connection system between users
+
+🔹 Key Learning:
+This project helped in understanding full-stack architecture, API integration, authentication systems, and database management in real-world applications.
+    `,
     demo: "https://project1.great-site.net/?i=1",
     image: socialImg,
   },
   {
     title: "AI Interview Platform",
     short: "AI-based mock interview system.",
-    full:
-      "Built an AI-powered interview simulation platform that allows users to practice real-world interview scenarios. The frontend was developed using React.js with a modern UI/UX design approach, ensuring smooth and responsive interaction. The backend was built using Node.js and Express.js to handle API requests and business logic. MongoDB was used as the database to store user responses, session data, and interview records. The system enables real-time interaction, structured question flow, and efficient data handling. Key features include dynamic question rendering, session tracking, and a responsive design that works seamlessly across devices.",
+    full: `
+This project is an AI-powered interview simulation platform designed to help users practice and improve their interview skills in a real-time interactive environment.
+
+🔹 Frontend Development:
+The frontend was built using React.js with modern UI/UX principles. The application provides a smooth and responsive user experience with dynamic rendering of questions and real-time interaction.
+
+🔹 Backend Development:
+The backend was developed using Node.js and Express.js, handling API requests, business logic, and user session management efficiently.
+
+🔹 Database:
+MongoDB was used to store user responses, interview sessions, and structured data. It allows flexible schema design and efficient handling of dynamic data.
+
+🔹 Features:
+- Real-time interview simulation
+- Dynamic question flow
+- Session tracking and response storage
+- Interactive UI for better user engagement
+
+🔹 Key Learning:
+This project strengthened knowledge in MERN stack development, real-time application flow, API integration, and user experience design.
+    `,
     demo: "https://ai-interview-frontend-lktd.vercel.app/",
     image: aiImg,
   },
   {
     title: "POS Billing System",
     short: "Billing + transaction system.",
-    full:
-      "Developed a Point-of-Sale (POS) billing system designed to manage products, invoices, and daily business transactions efficiently. The backend was implemented using Laravel (PHP), handling authentication, business logic, and secure role-based access control. MySQL was used as the database to store product details, transaction records, and invoice data. The system automates billing workflows, reducing manual effort and improving operational efficiency. Key features include invoice generation, product management, transaction tracking, and a secure login system. This project highlights strong backend development and database management skills.",
+    full: `
+This project is a Point-of-Sale (POS) billing system developed to manage products, invoices, and daily business transactions efficiently.
+
+🔹 Backend Development:
+The system was built using Laravel (PHP), handling core business logic, authentication, and role-based access control.
+
+🔹 Database:
+MySQL was used to store product data, transaction records, and invoice details. The system ensures structured data handling and efficient querying.
+
+🔹 Features:
+- Product management system
+- Invoice generation
+- Transaction tracking
+- Role-based authentication system
+- Automated billing workflows
+
+🔹 Key Learning:
+This project enhanced backend development skills, database design, and understanding of real-world business logic implementation.
+    `,
     demo: null,
     image: posImg,
   }
@@ -49,6 +105,7 @@ const Projects = () => {
             className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-6 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition"
           >
 
+            {/* Background Image */}
             <img
               src={p.image}
               alt=""
@@ -93,23 +150,25 @@ const Projects = () => {
 
       </div>
 
-      {/* MODAL */}
+      {/* 🔥 BIG MODAL */}
       {selected && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-6">
 
-          <div className="bg-black border border-white/20 rounded-xl p-8 max-w-xl relative">
+          <div className="bg-black border border-white/20 rounded-2xl p-10 w-full max-w-4xl h-[80vh] overflow-y-auto relative">
 
+            {/* Close */}
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-2 right-4 text-xl"
+              className="absolute top-4 right-6 text-2xl"
             >
               ✕
             </button>
 
-            <h3 className="text-2xl mb-4">{selected.title}</h3>
+            <h3 className="text-3xl font-bold mb-6">
+              {selected.title}
+            </h3>
 
-            {/* 🔥 SCROLLABLE CONTENT */}
-            <div className="max-h-[400px] overflow-y-auto text-gray-300 leading-relaxed">
+            <div className="text-gray-300 leading-relaxed whitespace-pre-line text-lg">
               {selected.full}
             </div>
 
