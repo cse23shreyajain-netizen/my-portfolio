@@ -7,6 +7,9 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import SectionWrapper from "./components/SectionWrapper";
+import Certifications from "./components/Certifications";
+
+<Certifications />
 
 function App() {
   return (
