@@ -1,45 +1,59 @@
-import MainLayout from "./layout/MainLayout";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import Contact from "./components/Contact";
-import SectionWrapper from "./components/SectionWrapper";
 import Certifications from "./components/Certifications";
-
-<Certifications />
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <MainLayout>
+    <div className="relative text-white overflow-x-hidden">
 
+      {/* 🌌 BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src="/background.png"
+          alt="background"
+          className="w-full h-full object-cover opacity-80"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      {/* 🔝 NAVBAR */}
       <Navbar />
 
-      <Hero />
+      {/* 🔽 SECTIONS */}
+      <main className="space-y-20">
 
-      <SectionWrapper>
-        <About />
-      </SectionWrapper>
+        <section id="home">
+          <Hero />
+        </section>
 
-      <SectionWrapper>
-        <Projects />
-      </SectionWrapper>
+        <section id="projects">
+          <Projects />
+        </section>
 
-      <SectionWrapper>
-        <Experience />
-      </SectionWrapper>
+        <section id="experience">
+          <Experience />
+        </section>
 
-      <SectionWrapper>
-        <Skills />
-      </SectionWrapper>
+        <section id="skills">
+          <Skills />
+        </section>
 
-      <SectionWrapper>
-        <Contact />
-      </SectionWrapper>
+        {/* 🆕 CERTIFICATIONS */}
+        <section id="certifications">
+          <Certifications />
+        </section>
 
-    </MainLayout>
+        <section id="contact">
+          <Contact />
+        </section>
+
+      </main>
+
+    </div>
   );
 }
 
