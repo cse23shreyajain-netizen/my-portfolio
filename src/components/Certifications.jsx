@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-// IMPORT IMAGES
 import govCert from "../assets/certificates/gov.png";
 import pitchCert from "../assets/certificates/pitch.png";
 import mernCert from "../assets/certificates/mern.png";
@@ -11,19 +10,16 @@ const certifications = [
     title: "MERN Full Stack Development Internship",
     org: "EduSkills Academy",
     image: mernCert,
-    desc: "Full-stack MERN internship with React, Node.js, MongoDB, APIs, JWT authentication, and deployment.",
   },
   {
     title: "Eureka Pitching Competition",
     org: "InspireX E-Cell, GGCT",
     image: pitchCert,
-    desc: "Participated in national-level pitching competition showcasing innovation and presentation skills.",
   },
   {
     title: "Quiz on India's Democracy",
     org: "Government of India (MyGov)",
     image: govCert,
-    desc: "Completed national-level quiz demonstrating awareness of Indian democracy and governance.",
   },
 ];
 
@@ -54,37 +50,31 @@ const Certifications = () => {
             <h3 className="text-lg font-semibold">{c.title}</h3>
             <p className="text-gray-400 mb-4">{c.org}</p>
 
-            <div className="flex gap-3 justify-center">
-
-              {/* DESCRIPTION */}
-              <button
-                className="px-4 py-2 border border-white/30 rounded-full hover:bg-white/10"
-              >
-                Description
-              </button>
-
-              {/* VIEW CERTIFICATE */}
-              <button
-                onClick={() => setSelectedImage(c.image)}
-                className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-pink-400 text-black rounded-full"
-              >
-                View Certificate
-              </button>
-
-            </div>
+            <button
+              onClick={() => setSelectedImage(c.image)}
+              className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-pink-400 text-black rounded-full"
+            >
+              View Certificate
+            </button>
 
           </motion.div>
         ))}
 
       </div>
 
-      {/* 🔥 IMAGE MODAL */}
+      {/* 🔥 MODAL */}
       {selectedImage && (
-        <div
-          onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-6"
-        >
+        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-6">
 
+          {/* ❌ CLOSE BUTTON */}
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white text-3xl hover:scale-110 transition"
+          >
+            ✕
+          </button>
+
+          {/* IMAGE */}
           <img
             src={selectedImage}
             className="max-w-5xl w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
