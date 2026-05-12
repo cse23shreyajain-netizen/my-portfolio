@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import socialImg from "../assets/projects/social.png";
 import aiImg from "../assets/projects/ai.png";
-import posImg from "../assets/projects/pos.png";
+import securexImg from "../assets/projects/securex.png";
 
 const projects = [
   {
@@ -33,6 +33,7 @@ This project helped in understanding full-stack architecture, API integration, a
     demo: "https://project1.great-site.net/?i=1",
     image: socialImg,
   },
+
   {
     title: "AI Interview Platform",
     short: "AI-based mock interview system.",
@@ -60,30 +61,39 @@ This project strengthened knowledge in MERN stack development, real-time applica
     demo: "https://ai-interview-frontend-lktd.vercel.app/",
     image: aiImg,
   },
+
   {
-    title: "POS Billing System",
-    short: "Billing + transaction system.",
+    title: "SecureX: AI Powered Cybersecurity Platform",
+    short: "AI-powered cybersecurity platform.",
     full: `
-This project is a Point-of-Sale (POS) billing system developed to manage products, invoices, and daily business transactions efficiently.
+This project is a full-stack AI-powered cybersecurity platform developed to enhance digital security through intelligent monitoring and protection systems.
+
+🔹 Frontend Development:
+The frontend was built using React.js with a modern responsive UI/UX design, ensuring smooth navigation, accessibility, and seamless user interaction across devices.
 
 🔹 Backend Development:
-The system was built using Laravel (PHP), handling core business logic, authentication, and role-based access control.
+The backend was developed using Node.js and Express.js, handling authentication, API management, security workflows, and threat monitoring efficiently.
 
 🔹 Database:
-MySQL was used to store product data, transaction records, and invoice details. The system ensures structured data handling and efficient querying.
+MySQL was used for secure and structured data storage including user credentials, security reports, threat logs, and analytics data.
 
-🔹 Features:
-- Product management system
-- Invoice generation
-- Transaction tracking
-- Role-based authentication system
-- Automated billing workflows
+🔹 AI & Security Features:
+- AI Powered Password Intelligence Engine
+- AI Phishing Detection System
+- Security Health Dashboard
+- Threat Monitoring System
+- JWT Authentication & Authorization
+- AI Cyber Assistant
+- Profile Management System
+
+🔹 Deployment:
+The project was deployed using Vercel, Render, and Railway while resolving production-level deployment issues, database connection problems, and API configuration challenges.
 
 🔹 Key Learning:
-This project enhanced backend development skills, database design, and understanding of real-world business logic implementation.
+This project provided hands-on experience in cybersecurity workflows, authentication systems, cloud deployment, backend optimization, API integration, debugging, and production-ready full-stack development.
     `,
-    demo: null,
-    image: posImg,
+    demo: "https://securex-frontend-lg5o.vercel.app",
+    image: securexImg,
   }
 ];
 
